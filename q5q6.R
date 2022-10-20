@@ -1,3 +1,17 @@
+################################################################
+#Task 5
+'In order to calculate the probabilities, we need to find out the times each
+length appears in all simulations. The first loop is used to indicate all the
+experiments, and the second loop is used to indicate n prisoners participated
+in turn. The third loops are used to simulate the process of each prisoner
+finding their cards. The length of every prisoner will be recorded by adding
+one to the corresonding item in list freq. At the end of each simulation, those
+length with freq more than 0 will be added by one in list cnt. After all the
+simulations are completed, the probabilities can be calculated by dividing cnt
+by nreps.'
+
+
+
 # to estimate the probabilities of loop length from 1 to 2n
 dloop = function(n,nreps){
   PR = numeric(2*n) # 2n-vector of each length's probability
@@ -35,11 +49,25 @@ dloop = function(n,nreps){
   return(PR)
 }
 
+
+
+
+################################################################
+#Task 6
+
+
+
 # estimate the probabilities for n = 50, nreps = 10000
 prob = dloop(50,10000)
 print(prob)
 plot(prob)
 
+# calculate the probability that there is no loop longer than 50
+ans = 1
+for (i in 51:length(prob)) {
+  ans = ans - prob[i]
+}
+print(ans)
 
 
 # calculate the probability that there is no loop longer than 50
