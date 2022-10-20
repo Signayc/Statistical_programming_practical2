@@ -17,7 +17,7 @@ dloop = function(n,nreps){
   PR = numeric(2*n) # 2n-vector of each length's probability
   cnt = numeric(2*n) # counts each length occurs at least once
   
-  # 2n simulations
+  # nreps simulations
   for (i in 1:nreps) {
     boxes = sample(1:(2*n),replace = F) # randomly shuffle cards to boxes
     freq = numeric(2*n) # the frequency each length occur in one simulation
@@ -75,7 +75,7 @@ dloop2 = function(n,nreps){
   PR = 0
   cnt = 0 # the counts of the simulations without loop longer than 50
   
-  # 2n simulations
+  # nreps simulations
   for (i in 1:nreps) {
     boxes = sample(1:(2*n),replace = F) # randomly shuffle cards to boxes
     max_len = 0 # record the longest length in each simulation
