@@ -126,7 +126,7 @@ Pall <- function(n,strategy,nreps=10000) {
     }
   }
     ###Tests end
-    print(paste0('the probability of all prisoners finding their numberï¼š',              
+    print(paste0('the probability of all prisoners finding their numberï¼?',              
                  all_escape_time / nreps))
 }
 
@@ -196,7 +196,7 @@ dloop <- function(n,nreps) {
   cnt = numeric(2*n) 
   # the counts of each length occur at least once in 2n simulations
   
-  # 2n simulations
+  # nreps simulations
   for (i in 1:nreps) {
     boxes = sample(1:(2*n),replace = F) # randomly shuffle cards to boxes
     freq = numeric(2*n) # the frequency of each length occur in one simulation
